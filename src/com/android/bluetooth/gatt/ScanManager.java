@@ -326,6 +326,25 @@ public class ScanManager {
         private static final int SCAN_MODE_LOW_LATENCY_WINDOW_MS = 5000;
         private static final int SCAN_MODE_LOW_LATENCY_INTERVAL_MS = 5000;
 
+        //SCSC_INTERNAL START -> Do not integrate to customer branches
+        /**
+         * SSB-13899 Add support for new SCAN intervals in Android-M
+         * Added additional SCAN Modes for Testing
+         */
+         public static final int SCAN_MODE_2_PERCENT_DUTY_CYCLE_WINDOW_MS = 55;
+         public static final int SCAN_MODE_2_PERCENT_DUTY_CYCLE_INTERVAL_MS = 3120;
+         public static final int SCAN_MODE_5_PERCENT_DUTY_CYCLE_WINDOW_MS = 160;
+         public static final int SCAN_MODE_5_PERCENT_DUTY_CYCLE_INTERVAL_MS = 3120;
+         public static final int SCAN_MODE_49_PERCENT_DUTY_CYCLE_WINDOW_MS = 2450;
+         public static final int SCAN_MODE_49_PERCENT_DUTY_CYCLE_INTERVAL_MS = 5000;
+         public static final int SCAN_MODE_FAST_SCAN_AUTO_WINDOW_MS = 30;
+         public static final int SCAN_MODE_FAST_SCAN_AUTO_INTERVAL_MS = 60;
+         public static final int SCAN_MODE_SLOW_SCAN_AUTO_WINDOW_MS = 80;
+         public static final int SCAN_MODE_SLOW_SCAN_AUTO_INTERVAL_MS = 1280;
+         public static final int SCAN_MODE_TEST_WINDOW_MS = 6;
+         public static final int SCAN_MODE_TEST_INTERVAL_MS = 6;
+         //SCSC_INTERNAL END -> Do not integrate to customer branches
+
         /**
          * Onfound/onlost for scan settings
          */
@@ -921,6 +940,24 @@ public class ScanManager {
                     return SCAN_MODE_BALANCED_WINDOW_MS;
                 case ScanSettings.SCAN_MODE_LOW_POWER:
                     return SCAN_MODE_LOW_POWER_WINDOW_MS;
+                //SCSC_INTERNAL START -> Do not integrate to customer branches
+                /**
+                 * SSB-13899 Add support for new SCAN intervals in Android-M
+                 * Added additional SCAN Modes for Testing
+                 */
+                case ScanSettings.SCAN_MODE_2_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_2_PERCENT_DUTY_CYCLE_WINDOW_MS;
+                case ScanSettings.SCAN_MODE_5_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_5_PERCENT_DUTY_CYCLE_WINDOW_MS;
+                case ScanSettings.SCAN_MODE_49_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_49_PERCENT_DUTY_CYCLE_WINDOW_MS;
+                case ScanSettings.SCAN_MODE_FAST_SCAN_AUTO:
+                    return SCAN_MODE_FAST_SCAN_AUTO_WINDOW_MS;
+                case ScanSettings.SCAN_MODE_SLOW_SCAN_AUTO:
+                    return SCAN_MODE_SLOW_SCAN_AUTO_WINDOW_MS;
+                case ScanSettings.SCAN_MODE_TEST:
+                    return SCAN_MODE_TEST_WINDOW_MS;
+                //SCSC_INTERNAL END -> Do not integrate to customer branches
                 default:
                     return SCAN_MODE_LOW_POWER_WINDOW_MS;
             }
@@ -936,6 +973,24 @@ public class ScanManager {
                     return SCAN_MODE_BALANCED_INTERVAL_MS;
                 case ScanSettings.SCAN_MODE_LOW_POWER:
                     return SCAN_MODE_LOW_POWER_INTERVAL_MS;
+                //SCSC_INTERNAL START -> Do not integrate to customer branches
+                /**
+                 * SSB-13899 Add support for new SCAN intervals in Android-M
+                 * Added additional SCAN Modes for Testing
+                 */
+                case ScanSettings.SCAN_MODE_2_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_2_PERCENT_DUTY_CYCLE_INTERVAL_MS;
+                case ScanSettings.SCAN_MODE_5_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_5_PERCENT_DUTY_CYCLE_INTERVAL_MS;
+                case ScanSettings.SCAN_MODE_49_PERCENT_DUTY_CYCLE:
+                    return SCAN_MODE_49_PERCENT_DUTY_CYCLE_INTERVAL_MS;
+                case ScanSettings.SCAN_MODE_FAST_SCAN_AUTO:
+                    return SCAN_MODE_FAST_SCAN_AUTO_INTERVAL_MS;
+                case ScanSettings.SCAN_MODE_SLOW_SCAN_AUTO:
+                    return SCAN_MODE_SLOW_SCAN_AUTO_INTERVAL_MS;
+                case ScanSettings.SCAN_MODE_TEST:
+                    return SCAN_MODE_TEST_INTERVAL_MS;
+                //SCSC_INTERNAL END -> Do not integrate to customer branches
                 default:
                     return SCAN_MODE_LOW_POWER_INTERVAL_MS;
             }
